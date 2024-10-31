@@ -1,3 +1,5 @@
+// infinitySencilla e infinityDoble definidos en Calculo.js
+
 $('#mytextarea1').keypress(function(event){
     event.preventDefault();
 });
