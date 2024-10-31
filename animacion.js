@@ -1,6 +1,3 @@
-const infinitySencilla = "000 0000 0000 0000 0000 0000";
-const infinityDoble = "0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000";
-
 $('#mytextarea1').keypress(function(event){
     event.preventDefault();
 });
