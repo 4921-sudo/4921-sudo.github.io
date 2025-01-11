@@ -1,0 +1,276 @@
+/* ================== 1) RESET Y FUENTES ================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7d9;
+}
+
+/* ================== 2) Versión de escritorio (>= 768px) ================== */
+/* #wrapper a la izquierda y #extra-caja a la derecha */
+
+
+@media (min-width: 768px) {
+    body {
+        display: flex;               /* Dos columnas en escritorio */
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px;               /* margen interior global */
+    }
+    
+    /* ---------- Bloque izquierdo: #wrapper ---------- */
+    #wrapper {
+        width: 45%;                  /* ~45% de ancho en escritorio */
+        background-color: #fffbea;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;          /* espacio horizontal con #extra-caja */
+    }
+    
+    header {
+        text-align: center;
+        background-color: #ffeb99;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: #333;
+    }
+    
+    /* Contenedor principal dentro de #wrapper */
+    .container {
+        width: 100%;
+        padding: 20px;
+        background-color: #f5f5cb;
+        border-radius: 0 0 10px 10px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Tabs (Decimal, Hex, Binary) */
+    .tabs {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+    .tab-button {
+        background-color: hsl(60, 56%, 78%);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .tab-button:hover {
+        background-color: hsl(60, 56%, 68%);
+    }
+    .tab-button.active {
+        background-color: #fffdcc;
+        font-weight: bold;
+    }
+    
+    /* Contenido de cada pestaña */
+    .tab-content {
+        display: none;
+        padding: 20px;
+        background-color: #ffffc7;
+        border-radius: 10px;
+    }
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    h2, h3, h4 {
+        color: #333;
+        margin: 0 0 10px;
+    }
+    
+    /* Inputs y selects */
+    input[type="text"], select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 1px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+    select {
+        cursor: pointer;
+        margin-top: 1px;
+        width: 60%; 
+        display: block;
+    }
+    .etiqueta {
+        font-size: 1.5rem;
+        color: #333;
+    }
+    
+    /* ========== Bloque derecho: #extra-caja (Escritorio) ========== */
+    #extra-caja {
+        width: 55%;                
+        background-color: #ffffc7;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+    
+        /* "Simple" y "Double" lado a lado en escritorio */
+        display: flex;
+        justify-content: space-between; 
+        align-items: flex-start;
+        
+
+    }
+    
+    /* Cada columna ~50% */
+    #extra-caja .left-content,
+    #extra-caja .right-content {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    /* Títulos "Simple / Double Precision" */
+    #extra-caja h2 {
+        margin: 0 0 10px 0;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    
+    /* Filas: Exponent, Sign Bit, etc. */
+    .exact-value-container,
+    .sign-bit-container,
+    .caracteristica-container,
+    .mantisa-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    /* Etiquetas en cada fila (Exact Value, Sign Bit...) */
+    .exact-value-label,
+    .sign-bit-label,
+    .caracteristica-label,
+    .mantisa-label {
+        font-size: 1.2rem;
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+    }
+    
+    /* Textareas (versión escritorio) */
+    .scrollable {
+        resize: none;
+        width: 100%;
+        padding: 5px;
+        margin: 8px 8px 8px 0px; 
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 120%;
+        box-sizing: border-box;
+        text-align: left;
+        /* 
+          Forzar que el texto se muestre de forma horizontal (una sola línea) 
+          y habilitar scroll horizontal (deshabilitando vertical).
+        */
+        white-space: nowrap; 
+        overflow-x: auto;
+        overflow-y: hidden;
+        cursor: text;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    
+    /* ========== Botones y select ========== */
+    .select-calculate-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .only-select{
+         display: flex;
+    }
+
+    #select1 {
+        margin-right: auto;
+        width: 12rem;
+        margin-right: 10%;
+        font-size: 14px;
+        line-height: 1.2;
+        padding: 6px 8px;
+    }
+
+    .only-buttons{
+        max-width: 30%;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .calculate-button {
+        overflow: hidden;
+        background-color: #4CAF50;
+        border: none;
+        justify-content: center;
+        color: white;
+        font-size: 1em;
+        line-height: 1.2;
+        cursor: pointer;
+        border-radius: 4px;
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .calculate-button:hover {
+        background-color: #45a049;
+    }
+
+    .calculate-button:disabled {
+        background-color: #A5D6A7; /* Verde más claro para el estado deshabilitado */
+        color: #FFFFFF; /* Texto blanco para contraste */
+        border: 1px solid #81C784; /* Borde en un tono complementario */
+        cursor: not-allowed; /* Cursor de no permitido */
+        opacity: 0.8; /* Sutil transparencia */
+        box-shadow: none; /* Sin sombra para botones deshabilitados */
+      }
+
+    #clearBtn {
+        background-color: #f44336;
+    }
+    #clearBtn:hover {
+        background-color: #e53935;
+    }
+    #extra-caja .left-content h2,
+    #extra-caja .right-content h2 {
+      margin-left: 30%; /* Ajusta a tu gusto (10px, 30px, etc.) */
+    }
+  }
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+input[type="text"].entrada_mal_inactivo {
+    border-color: red;
+}
+
+input[type="text"].entrada_mal_activo:focus {
+    border-color: red;
+    outline: none;
+}
