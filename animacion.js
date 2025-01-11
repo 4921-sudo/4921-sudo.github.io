@@ -118,6 +118,7 @@ botonClear.addEventListener('click', () => {
 	entrada2.classList.remove("entrada_mal_activo");
     entrada3.classList.remove("entrada_mal_inactivo");
 	entrada3.classList.remove("entrada_mal_activo");
+	inputCalculate = "";
 });
 
 botonCalculate.addEventListener('click', () => {
