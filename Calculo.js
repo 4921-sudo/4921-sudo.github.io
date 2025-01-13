@@ -714,7 +714,7 @@ class Octal extends Numero{
 		}
 		let resultadoBinario = BigInt(`0o${numeroEnTexto}`).toString(2);
 		for(let u = 0; u < i; u++){
-			resultadoHexadecimal = '000' + resultadoHexadecimal;
+			resultadoBinario = '000' + resultadoBinario;
 		}
 		// Asegurarse de que cada dígito octal tiene exactamente 3 bits binarios
 		while ((resultadoBinario.length % 3) !== 0) { 
